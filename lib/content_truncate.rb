@@ -1,16 +1,29 @@
-require "content_truncate/version"
+require 'active_support/core_ext/string'
 
 module ContentTruncate
-  # Your code goes here...
-  class String
-
-    def content_truncate length, *separator
+  module String
+    def content_truncate limit_length, *separators
       sub_string = self.dup
-      while sep = separator.pop
-        sub_string = sub_string.truncate(length, separator: sep)
+      sep = separators.pop
+      if sep
+        while sep
+          index = sub_string.index(sep)
+          if index <= limit_length
+            while index && index <= limit_length
+              prev_index, index = index, sub_string.index(sep, index+1)
+            end
+            return sub_string[0...prev_index].strip
+          else
+            sep = separators.pop
+          end
+        end
+      else
+        sub_string.truncate(limit_length, separator: sep)
       end
     end
   end
 end
 
-String.send include ContentTruncate::String
+class String
+  include ContentTruncate::String
+end

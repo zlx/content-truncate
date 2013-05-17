@@ -1,6 +1,6 @@
 # ContentTruncate
 
-TODO: Write a gem description
+smart truncate for content
 
 ## Installation
 
@@ -18,7 +18,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    String#content_truncate(limit_length, "<br/>", "\n", " ", ...)
+
+In the example, It truncate a String to limit_length, as long as possible end with "<br/>" or "\n" or " " or ...
 
 ## Contributing
 

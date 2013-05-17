@@ -7,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.name          = "content_truncate"
   spec.version       = ContentTruncate::VERSION
   spec.authors       = ["soffolk"]
-  spec.email         = ["lianxin.zhu@easyread.ly"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.email         = ["zlx.star@gmail.com"]
+  spec.description   = %q{smart truncate for content}
+  spec.summary       = %q{smart truncate for content}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -18,6 +18,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "active_support", "3.0.0"
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
 end
