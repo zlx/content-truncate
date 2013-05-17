@@ -1,5 +1,7 @@
 # ContentTruncate
 
+![build status](https://secure.travis-ci.org/zlx/content-truncate.png)](https://travis-ci.org/zlx/content-truncate)
+
 smart truncate for content
 
 ## Installation
