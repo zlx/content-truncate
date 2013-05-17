@@ -20,7 +20,7 @@ Or install it yourself as:
 
     String#content_truncate(limit_length, "<br/>", "\n", " ", ...)
 
-In the example, It truncate a String to limit_length, as long as possible end with "<br/>" or "\n" or " " or ...
+In the example, It truncate a String to `limit_length`, as long as possible end with `<br/>` or `\n` or ` `  or ...
 
 ## Contributing
 
