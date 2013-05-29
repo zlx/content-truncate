@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'test/unit'
 require_relative '../lib/content_truncate'
 
@@ -17,5 +18,9 @@ class ContentTruncateTest < Test::Unit::TestCase
   
   def test_content_truncate_for_separators
     assert_equal "Truncate a string down to", mock_string.content_truncate(60, "\n", "<br/>", " ")
+  end
+  
+  def test_content_truncate_for_missing_char
+    assert_equal "Truncate a string down to \n x characters. <br/>", mock_string.content_truncate(60, "。", "<br/>")
   end
 end

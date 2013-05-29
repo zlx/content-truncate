@@ -6,7 +6,7 @@ module ContentTruncate
       sub_string = self.dup
       sep = separators.shift
       if sep
-        sub_string.send(:smart_truncate, limit_length, sep, separators)
+        sub_string.send(:smart_truncate, limit_length, sep, *separators)
       else
         sub_string.truncate(limit_length, separator: sep)
       end
@@ -15,15 +15,14 @@ module ContentTruncate
     private
     def smart_truncate limit_length, sep, *separators
       while sep
-        index = self.index(sep)
-        if index <= limit_length
-          while index && index <= limit_length
-            prev_index, index = index, self.index(sep, index+1)
+        position = self.index(sep)||limit_length+1
+        if position <= limit_length
+          while position && position <= limit_length
+            prev_index, position = position, self.index(sep, position+1)
           end
           return self[0..(prev_index+sep.length)].strip
-        else
-          sep = separators.shift
         end
+        sep = separators.shift
       end
     end
   end
