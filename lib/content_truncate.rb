@@ -20,7 +20,7 @@ module ContentTruncate
           while position && position <= limit_length
             prev_index, position = position, self.index(sep, position+1)
           end
-          return self[0..(prev_index+sep.length)].strip
+          return self[0...(prev_index+sep.length)].strip
         end
         sep = separators.shift
       end
