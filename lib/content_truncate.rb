@@ -20,7 +20,7 @@ module ContentTruncate
           while index && index <= limit_length
             prev_index, index = index, self.index(sep, index+1)
           end
-          return self[0...prev_index].strip
+          return self[0..(prev_index+sep.length)].strip
         else
           sep = separators.shift
         end

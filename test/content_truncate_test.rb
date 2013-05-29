@@ -12,7 +12,7 @@ class ContentTruncateTest < Test::Unit::TestCase
   end
   
   def test_content_truncate_for_one_separator
-    assert_equal "Truncate a string down to \n x characters.", mock_string.content_truncate(100, "<br/>")
+    assert_equal "Truncate a string down to \n x characters. <br/>", mock_string.content_truncate(100, "<br/>")
   end
   
   def test_content_truncate_for_separators
