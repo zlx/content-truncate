@@ -24,6 +24,7 @@ module ContentTruncate
         end
         sep = separators.shift
       end
+      return self[0...limit_length].strip
     end
   end
 end

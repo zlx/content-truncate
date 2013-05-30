@@ -27,4 +27,8 @@ class ContentTruncateTest < Test::Unit::TestCase
   def test_content_truncate_for_include_sep
     assert_equal "Truncate a string down to \n x characters. <br/>", mock_string.content_truncate(48, "。", "<br/>")
   end
+  
+  def test_content_truncate_for_nil_match
+    assert_equal "测试中文无", "测试中文无符号".content_truncate(5, "。", "<br/>")
+  end
 end
