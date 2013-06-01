@@ -1,4 +1,4 @@
-require 'active_support/core_ext/string'
+# encoding: utf-8
 
 module ContentTruncate
   module String
@@ -8,7 +8,7 @@ module ContentTruncate
       if sep
         sub_string.send(:smart_truncate, limit_length, sep, *separators)
       else
-        sub_string.truncate(limit_length, separator: sep)
+        sub_string.send(:smart_truncate, limit_length, "<br/>", "\n", "。", ".", " ")
       end
     end
     
