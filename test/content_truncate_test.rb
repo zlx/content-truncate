@@ -1,6 +1,6 @@
 # encoding: utf-8
 require 'test/unit'
-require_relative '../lib/content_truncate'
+require File.join(File.expand_path(File.dirname(__FILE__)), '../lib/content_truncate')
 
 class ContentTruncateTest < Test::Unit::TestCase
   include ContentTruncate::String
