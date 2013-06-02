@@ -26,7 +26,11 @@ class ContentTruncateTest < Test::Unit::TestCase
   end
   
   def test_content_truncate_for_nil_match
-    assert_equal "测试中文无", "测试中文无符号".content_truncate(5, "。", "<br/>")
+    if RUBY_VERSION < '1.9'
+      assert_equal "测试中文无", "测试中文无符号".content_truncate(15, "。", "<br/>")
+    else
+      assert_equal "测试中文无", "测试中文无符号".content_truncate(5, "。", "<br/>")
+    end
   end
   
   def test_content_truncate_default_behaviour

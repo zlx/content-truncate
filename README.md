@@ -40,6 +40,7 @@ convert to
 
 by call `String#content_truncate(180)`
 
+*Note:In ruby < 1.9, the result for string contains unicode chars may be special, because the unicode char is process as two char*
 
 ## Contributing
 
